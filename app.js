@@ -1,4 +1,7 @@
 const express = require("express");
+const {
+  getCommentsForArticle,
+} = require("./controllers/commentCount.controllers");
 const { getTopics } = require("./controllers/get.controllers");
 const { getArticles } = require("./controllers/getArticles.controllers");
 
@@ -9,7 +12,10 @@ app.use(express.json());
 
 // GET
 app.get("/api/topics", getTopics);
-app.get("/api/articles/:article_id", getArticles);
+// app.get("/api/articles/:article_id", getArticles);
+
+// GET /api/articles/:article_id (comment count)
+app.get("/api/articles/:article_id", getCommentsForArticle);
 
 app.post("/api/comments/:article_id/comments", postComments);
 

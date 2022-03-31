@@ -10,3 +10,4 @@ exports.getArticlesModel = (article_id) => {
       throw error;
     });
 };
+
