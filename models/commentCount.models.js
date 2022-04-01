@@ -3,8 +3,6 @@ const db = require("../db/connection");
 exports.getCommentsByID = async (article_id) => {
   const column_match = [];
 
-  //   SELECT CAST(25.65 AS int);
-
   let joinCommentsCount = `
     SELECT articles.*, CAST(COUNT(comments.article_id) AS INT) AS comment_count
     FROM articles 
